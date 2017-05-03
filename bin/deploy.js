@@ -9,7 +9,8 @@ const commands = require('../commands');
 
 let options = cli.parse({
   environment: [ 'e', 'A configured deployment environment, i.e. "staging", "production".', 'environment', 'production'],
-  verbose: ['v', 'Toggle verbosity', 'bool', false]
+  verbose: ['v', 'Toggle verbosity', 'bool', false],
+  revision: ['r', '("activate" only) revision to activate', 'string', false]
 }, ['deploy', 'list', 'activate']);
 
 let ui = new UI({
