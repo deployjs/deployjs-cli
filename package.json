@@ -1,5 +1,5 @@
 {
-  "name": "deployjs",
+  "name": "deploy-js",
   "version": "0.0.1",
   "description": "Deploy JS applications with a single command",
   "main": "index.js",
