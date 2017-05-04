@@ -1,4 +1,6 @@
 # DeployJS
+[![Build Status](https://travis-ci.org/deploy-js/deployjs.svg?branch=master)](https://travis-ci.org/deploy-js/deployjs)
+
 Deploy JS applications with a single command. Based on [ember-cli-deploy](https://github.com/ember-cli-deploy/ember-cli-deploy).
 
 # How to use
