@@ -4,7 +4,7 @@
   "description": "Deploy JS applications with a single command",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/mocha/bin/mocha tests/**/*-test.js"
   },
   "author": "",
   "license": "MIT",
@@ -17,5 +17,10 @@
   },
   "bin": {
     "deployjs": "bin/deploy.js"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.3.0"
   }
 }
