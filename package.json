@@ -12,7 +12,7 @@
     "cli": "^1.0.1",
     "console-ui": "^1.0.3",
     "core-object": "^3.1.0",
-    "ember-cli-deploy": "^1.0.0",
+    "ember-cli-deploy": "duizendnegen/ember-cli-deploy#d7ce222159421fa01ccc143f636699495f7f3294",
     "promise": "^7.1.1"
   },
   "bin": {
