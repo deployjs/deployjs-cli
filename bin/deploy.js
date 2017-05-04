@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-const Project = require('../models/project');
 const UI = require('console-ui');
-
 const cli = require('cli');
+
+const Project = require('../models/project');
+const CommandFactory = require('../commands/command-factory');
+
 const discovery = require('../tasks/discover');
-const commands = require('../commands');
 
 let options = cli.parse({
   environment: [ 'e', 'A configured deployment environment, i.e. "staging", "production".', 'environment', 'production'],
@@ -19,12 +20,12 @@ let ui = new UI({
   writeLevel: 'INFO'
 });
 
+let commandFactory = new CommandFactory();
+
 discovery.list().then(function(dependencies) {
   let project = new Project(dependencies, ui);
 
-  let command = new commands[cli.command](project);
-  command.run(options);
+  commandFactory.run(cli.command, project, options);
 }).catch(function(error) {
-  console.log('[ERROR]');
-  console.log(error);
+  console.log((error && error.message) ? '[ERROR] -- ' + error.message : error);
 });
