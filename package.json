@@ -1,5 +1,5 @@
 {
-  "name": "deploy-js",
+  "name": "@deployjs/cli",
   "version": "0.0.3",
   "description": "Deploy JS applications with a single command",
   "main": "index.js",
@@ -17,6 +17,10 @@
   },
   "bin": {
     "deployjs": "bin/deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deployjs/deployjs-cli.git"
   },
   "devDependencies": {
     "chai": "^3.5.0",
