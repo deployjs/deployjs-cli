@@ -1,0 +1,4 @@
+# force unix line endings on all files, needed for Windows npm publishing
+# https://github.com/ember-cli/ember-cli/issues/5342
+* text eol=lf
+*.png binary
