@@ -1,6 +1,6 @@
 {
   "name": "@deployjs/cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Deploy JS applications with a single command",
   "main": "index.js",
   "scripts": {
