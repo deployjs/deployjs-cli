@@ -9,7 +9,7 @@ const CommandFactory = require('../commands/command-factory');
 const discovery = require('../tasks/discover');
 
 let options = cli.parse({
-  environment: [ 'e', 'A configured deployment environment, i.e. "staging", "production".', 'environment', 'production'],
+  environment: [ 'e', 'A configured deployment environment, i.e. "staging", "production".', 'string', 'production'],
   verbose: ['v', 'Toggle verbosity', 'bool', false],
   revision: ['r', '("activate" only) revision to activate', 'string', false],
   activate: ['a', '("deploy" only) directly activate the deployed revision', 'bool', false]
