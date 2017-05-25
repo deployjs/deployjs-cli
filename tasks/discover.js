@@ -38,12 +38,17 @@ let _loadDependencies = function(dependencies) {
   }).map(function(dependency) {
     let loadedDependency;
 
-    if(dependency.main) {
-      loadedDependency = require(path.join(dependency.path, dependency.main));
-    } else {
-      loadedDependency = require(dependency.path);
+    try {
+      if(dependency.main) {
+        loadedDependency = require(path.join(dependency.path, dependency.main));
+      } else {
+        loadedDependency = require(dependency.path);
+      }
+    } catch(err) {
+      console.error("[ERROR] -- Couldn't load " + dependency.name);
+      throw err;
     }
-    
+
     loadedDependency.pkg = dependency;
     return loadedDependency;
   });
