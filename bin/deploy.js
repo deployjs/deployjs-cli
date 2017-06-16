@@ -29,4 +29,6 @@ discovery.list().then(function(dependencies) {
   commandFactory.run(cli.command, project, options);
 }).catch(function(error) {
   console.log((error && error.message) ? '[ERROR] -- ' + error.message : error);
+
+  process.exitCode = 1;
 });
