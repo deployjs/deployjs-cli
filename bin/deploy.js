@@ -8,6 +8,8 @@ const CommandFactory = require('../commands/command-factory');
 
 const discovery = require('../tasks/discover');
 
+const pkg = require('./package.json');
+
 let options = cli.parse({
   environment: [ 'e', 'A configured deployment environment, i.e. "staging", "production".', 'string', 'production'],
   verbose: ['v', 'Toggle verbosity', 'bool', false],
@@ -21,12 +23,16 @@ let ui = new UI({
   writeLevel: 'INFO'
 });
 
+ui.write('DeployJS CLI v' + pkg.version);
+
 let commandFactory = new CommandFactory();
 
 discovery.list().then(function(dependencies) {
   let project = new Project(dependencies, ui);
 
-  commandFactory.run(cli.command, project, options);
+  return commandFactory.run(cli.command, project, options);
+}).then(function() {
+  ui.write('DeployJS done!');
 }).catch(function(error) {
   console.log((error && error.message) ? '[ERROR] -- ' + error.message : error);
 

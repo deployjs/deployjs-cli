@@ -23,6 +23,6 @@ module.exports = CoreObject.extend({
     command.project = project;
     command.ui = project.ui;
 
-    command.run(options, [ options.environment ]);
+    return command.run(options, [ options.environment ]);
   }
 });
