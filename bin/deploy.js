@@ -8,7 +8,7 @@ const CommandFactory = require('../commands/command-factory');
 
 const discovery = require('../tasks/discover');
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
 let options = cli.parse({
   environment: [ 'e', 'A configured deployment environment, i.e. "staging", "production".', 'string', 'production'],
