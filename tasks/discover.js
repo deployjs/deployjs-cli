@@ -57,7 +57,7 @@ let _loadDependencies = function(dependencies) {
 module.exports = {
   list: function() {
     return new Promise(function(resolve, error) {
-      exec('npm ls --depth=10 --json --long', {maxBuffer: 1024 * 1024 * 32}, function(err, stdout, stderr) {
+      exec('npm ls --depth=2 --json --long', {maxBuffer: 1024 * 1024 * 32}, function(err, stdout, stderr) {
         let dependencies = JSON.parse(stdout).dependencies;
         let flattenedDependencies = _flattenNestedDependencies(dependencies);
         let filteredDependencies = _filterDependencies(flattenedDependencies);
